@@ -20,6 +20,11 @@
 \usepackage{hyphenat}
 \usepackage{fontawesome}
 \input{glyphtounicode}
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+\addbibresource{citations.bibtex} %Imports bibliography file\
 
 
 %---------- FONT OPTIONS ----------
@@ -132,11 +137,13 @@
 %---------- HEADING ----------
 
 \begin{center}
-    \textbf{\Huge \scshape Resume - Varun Madabushi} \\ \vspace{3pt}
+    \textbf{\Huge \scshape Varun Madabushi } \\ \vspace{3pt}
     \small
     \faMobile \hspace{.5pt} \href{tel:8139651255}{(813) 965 1255}
+    % Varun Madabushi
     $|$
-    \faAt \hspace{.5pt} \href{mailto:v.madabushi917@gmail.com}{v.madabushi917@gmail.com}
+    \faAt \hspace{.5pt}
+    \href{mailto:v.madabushi917@gmail.com}{v.madabushi917@gmail.com}
     $|$
     \faMapMarker \hspace{.5pt} {Columbia, MD, USA}
 \end{center}
@@ -178,12 +185,12 @@
       {Johns Hopkins University Applied Physics Laboratory}{Laurel, MD}
       {Robotics Engineer}{Jun 2022 \textbf{--} Present}
         \resumeItemListStart
-      \resumeItem{Developed co-design algorithm using bayesian optimization to select designs and control
-      policies for hexapod robot}
+      \resumeItem{Developed co-design algorithm using bayesian optimization to
+      select leg designs and gait patterns for hexapod robot}
       \resumeItem{Developed fixed-wing aircraft and propeller models in C++ for use in
       Nonlinear Model Predictive Controller}
       \resumeItem{Implemented scripted task behaviors and "glue logic" for demonstrations
-      of underwater robot manipulator}
+      of underwater manipulator robot}
       \resumeItem{Designed 2-axis sensor positioning mechanism for littoral zone
       exploration robot}
       \resumeItem{Developed power and control electronics for thermal cautery heater used in
@@ -198,9 +205,9 @@
       Sep 2021 \textbf{--} Apr 2022}
         \resumeItemListStart
       \resumeItem{Designed simulator and hardware-in-the-loop testing framework
-      for Unmanned Surface Vehicle control system}
+      for Unmanned Surface Vehicle (USV) control system}
       \resumeItem{Developed actuator and hydrodynamic drag models fit from experimental
-       data}
+       data, used to inform new USV design}
       \resumeItem{Led development of data collection system integrating cameras,
       hydrophones, and FPGA on custom PCB}
         \resumeItemListEnd
@@ -220,7 +227,7 @@
       {Graduate Researcher}{Jan 2022 \textbf{--} Aug 2022}
         \resumeItemListStart
           \resumeItem{Combined model predictive and reinforcement learning-based aircraft controllers to improve generalization to various aircraft types}
-        \resumeItem{Developed trajectory library utilizing convex
+        \resumeItem{Developed trajectory library in MATLAB utilizing convex
           optimization to generate composite bezier spline paths}
         \resumeItemListEnd
     
@@ -231,7 +238,7 @@
       {Undergraduate Researcher}{Aug 2019 \textbf{--} Dec 2020}
         \resumeItemListStart
             \resumeItem{Designed components of hexapod robot with swappable locomotion mechanism for efficient multi-terrain traversal}
-            \resumeItem{Developed servo PCB, communication interface, and feedback control software for leg actuator and control system}
+            \resumeItem{Developed DC motor control PCB, communication interface, and feedback control software for leg actuator and control system}
       \resumeItem{Published "Increasing Mobile Robot Efficiency and Versatility
       Through Manipulation-Driven Adaptation" in ASME Journal of Mechanisms and
       Robotics (Oct 2021)}
@@ -249,22 +256,58 @@
         \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-% \section{Personal Projects}
-%   \vspace{3pt}
-%   \resumeSubHeadingListStart
-%     \resumeSubheading
-%       {Combat Robots/"BattleBots"}{June 2021 \textbf{--} Present}
-%       {}{}
-%         \resumeItemListStart
-%           \resumeItem{Designed and built 12lb and 3lb combat robots using horizontal spinning
-%           weapons and novel control algorithm}
-%     \resumeItem{Designed and tested custom printed circuit boards to house
-%     sensors, communications, power management, and microcontroller in small package}
-%     \resumeItem{Participated in multiple competitions and analyzed battle damage
-%     for potential improvements}
-%         \resumeItemListEnd
-%   \resumeSubHeadingListEnd
+\section{Publications}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+  \item \nocite{*} \printbibliography[heading=none]
+  \resumeSubHeadingListEnd
+
+
+\section{Personal Projects}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Combat Robots/"BattleBots"}{June 2021 \textbf{--} Present}
+      {}{}
+        \resumeItemListStart
+          \resumeItem{Designed and built 12lb and 3lb combat robots using horizontal spinning
+          weapons and novel control algorithm}
+    \resumeItem{Designed and tested custom printed circuit boards to house
+    sensors, communications, power management, and microcontroller in small package}
+    \resumeItem{Participated in multiple competitions and analyzed battle damage
+    for potential improvements}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
     
+
+%----------- TEACHING -----------
+\section{Teaching}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {RoboJackets Electrical Training}{Georgia Tech}
+      {Electrial Training Lead}{Aug 2018 \textbf{--} Dec 2020}
+        \resumeItemListStart
+    \resumeItem{Wrote and delivered a 7 week training course teaching 60 incoming robotics
+    students about PCB design using EAGLE software}
+    \resumeItem{Implemented hands-on activities to introduce breadboarding and
+    electronics concepts}
+    \resumeItem{Created video tutorial series on EAGLE software for
+    virtual/asynchronous learning}
+        \resumeItemListEnd
+
+    \resumeSubheading
+      {The Hive - ECE Makerspace}{Georgia Tech}
+      {Peer Instructor}{May 2021 \textbf{--} Dec 2021}
+        \resumeItemListStart
+      \resumeItem{Gave advice and debugging assistance to students completing
+      school and personal projects}
+      \resumeItem{Led workshops to teach 30 students soldering, programming, and
+      3D printing to build their own keyboards}
+      \resumeItem{Performed inventory management and equiment maintenance for
+      electronics and 3D printing lab}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
 %----------- SKILLS -----------
 
@@ -272,9 +315,11 @@
   \vspace{2pt}
   \resumeSubHeadingListStart
     \small{\item{
-        \textbf{Programming:}{ C++, Python, MATLAB, VHDL} \\ \vspace{3pt}
+        \textbf{Concepts:}{ Nonlinear Control, Model Predictive Control, System
+        Identification, Brushless Motor Control} \\ \vspace{3pt}
+        \textbf{Programming:}{ C++, Python, MATLAB, CUDA, ROS, Docker, STM32, Arduino } \\ \vspace{3pt}
         
-        \textbf{Technologies:}{ Solidworks, OnShape, Inventor, Altium, Eagle, KiCAD, ROS, STM32, Arduino, Simulink, LTspice} \\ \vspace{3pt}
+        \textbf{Software:}{ Solidworks, OnShape, Altium, KiCAD, Inventor, Eagle, Simulink, LTspice} \\ \vspace{3pt}
         
         \textbf{Tools:}{ Soldering (SMD and THT), Mill, Lathe, 3D Printer, Oscilloscope, Logic Analyzer}
         
@@ -284,6 +329,8 @@
         % \textbf{Applications}{: X, X, X}
     }}
   \resumeSubHeadingListEnd
+
+
 
 %----------- RELEVANT COURSEWORK -----------
 
