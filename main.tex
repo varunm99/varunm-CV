@@ -26,6 +26,25 @@ style=ieee,
 ]{biblatex}
 \addbibresource{citations.bibtex} %Imports bibliography file\
 
+% Bold "Varun Madabushi" in bibliography
+\usepackage{xpatch}
+\newbibmacro*{name:bold}[2]{%
+  \def\do##1{\iffieldequalstr{hash}{##1}{\bfseries\listbreak}{}}%
+  \dolistloop{\boldnames}%
+}
+\newcommand*{\boldnames}{}
+\xpretocmd{\mkbibnamefamily}{\begingroup\usebibmacro{name:bold}{#1}{}}{}{}
+\xapptocmd{\mkbibnamefamily}{\endgroup}{}{}
+\xpretocmd{\mkbibnamegiven}{\begingroup\usebibmacro{name:bold}{#1}{}}{}{}
+\xapptocmd{\mkbibnamegiven}{\endgroup}{}{}
+\xpretocmd{\mkbibnameprefix}{\begingroup\usebibmacro{name:bold}{#1}{}}{}{}
+\xapptocmd{\mkbibnameprefix}{\endgroup}{}{}
+\xpretocmd{\mkbibnamesuffix}{\begingroup\usebibmacro{name:bold}{#1}{}}{}{}
+\xapptocmd{\mkbibnamesuffix}{\endgroup}{}{}
+
+\forcsvlist{\listadd\boldnames}
+  {16c6d047731af050a67145246b055cbf}
+
 
 %---------- FONT OPTIONS ----------
 % sans-serif
