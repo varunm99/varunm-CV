@@ -172,7 +172,8 @@ style=ieee,
 
 %----------- EDUCATION -----------
 \section{Overview}
-  I am a 2nd-year PhD student studying Robotics and Control theory, seeking an internship in the robotics field. I am primarily interested in control theory, physics simulation, and control of safety-critical systems.
+  2nd-year PhD student seeking an internship in the robotics field. Research in control of bipedal robots, with a wide breadth of skills spanning hardware, software, and control domains.
+  Interested in positions involving physics simulation and control of safety-critical systems.
 
 \section{Education}
   \vspace{3pt}
@@ -180,11 +181,80 @@ style=ieee,
     
     \resumeEducationHeading
       {Georgia Institute of Technology}{Atlanta, GA}
-      {B.S. in Electrical Engineering, Minor in Robotics   }{Aug 2017 \textbf{--} Dec 2020}
-      {M.S. in Electrical and Computer Engineering         }{Jan 2021 \textbf{--} May 2022}
-      {PhD. in Robotics (Advisor: Dr. Maegan Tucker)       }{Aug 2024 \textbf{--} May 2029 (Expected)}
+      {B.S. in Electrical Engineering, Minor in Robotics (GPA: 3.92/4.00)   }{Aug 2017 \textbf{--} Dec 2020}
+      {M.S. in Electrical and Computer Engineering (GPA: 4.00/4.00)        }{Jan 2021 \textbf{--} May 2022}
+      {PhD. in Robotics (Advised by Dr. Maegan Tucker)       }{Aug 2024 \textbf{--} May 2029 (Expected)}
   \resumeSubHeadingListEnd
 
+%----------- WORK EXPERIENCE -----------
+
+\section{Employment}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Johns Hopkins University Applied Physics Laboratory}{Laurel, MD}
+      {Robotics Engineer}{Jun 2022 \textbf{--} Jul 2024}
+        \resumeItemListStart
+      \resumeItem{Led statistical verification and operational analysis, and assisted in development of \textbf{Nonlinear Model Predictive Control (NMPC)} algorithm for
+      multi-agent fixed-wing UAV systems (presented at ICRA 2025)}
+      \resumeItem{Provided hardware and software support for outdoor flight tests of NMPC-based UAV landing controller}
+      \resumeItem{Implemented \textbf{trajectory optimization} to realize manipulation behaviors such grasping and valve turning on
+      unmanned underwater mobile manipulator (awarded top prize in internal R\&D across all of the company)}
+      \resumeItem{Co-led research on robot co-design, which leveraged \textbf{Bayesian optimization} to automatically choose 
+      task-optimal hardware and control parameters for hexapod robot system}
+      % \resumeItem{Implemented scripted task behaviors and "glue logic" for demonstrations
+      % of underwater manipulator robot}
+      \resumeItem{Designed 2-axis sensor positioning mechanism for littoral zone
+      exploration robot}
+      \resumeItem{Developed power and control electronics for thermal cautery heater used in
+      experimental emergency medical device}
+      \resumeItem{Mentored high school interns on mechanical and software design
+      of robotic manipulator}
+    \resumeItemListEnd
+    \resumeSubheading
+      {Lawrence Livermore National Laboratory}{Livermore, CA}
+      {Defense Technologies Engineering Intern}{May 2020 \textbf{--} Aug 2020,
+      Sep 2021 \textbf{--} Apr 2022}
+      \resumeItemListStart
+        \resumeItem{Designed simulator and hardware-in-the-loop testing
+        for Unmanned Surface Vehicle (USV) control system}
+        \resumeItem{Developed actuator and hydrodynamic drag models fit from experimental
+        data, used to inform new USV design}
+        \resumeItem{Led development of data collection system integrating cameras,
+        hydrophones, and FPGA on custom PCB}
+      \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+
+\section{Research Experience}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Robot Learning for Locomotion}{}
+      {Advised by Dr. Maegan Tucker}{Aug 2024 \textbf{--} Present}
+      \resumeItemListStart
+        \resumeItem{Developed bipedal robot control system utilizing offline trajectory optimization and \textbf{reinforcement learning} to generate stepping behaviors that are 
+        natural-looking, easily tunable, and train faster than comparable approaches (Accepted to ICRA 2026).}
+        \resumeItem{Assisted development of humanoid motion regtargeting algorithm which integrates motion capture and ground reaction force data alongside trajectory
+        optimization to produce dynamically feasible and human-like reference trajectories (Submitted to IROS 2026; under review).}
+      \resumeItemListEnd 
+    \resumeSubheading
+      {Reachability Analysis of Hybrid Systems}{}
+      {Advised by Dr. Maegan Tucker, Dr. Samuel Coogan}{Aug 2024 \textbf{--} Present}
+      \resumeItemListStart
+        \resumeItem{Studying safety verification and robust control of hybrid systems using fast computation of forward-reachable sets.}
+        \resumeItem{Developed criteria for computing a forward reachable set associated to the periodic orbit of a hybrid system, and applied this to verify robustness of a periodic bipedal walking gait (Submitted to CDC 2026).}
+        \resumeItem{Demonstrated robust control design by optimizing controller to increase size of invariant set.}
+        \resumeItem{Created algorithm for probabilistic invariant set computation through sampling-based optimization and PAC learning for correctness guarantees (Submitted to CDC 2026).}
+      \resumeItemListEnd 
+    \resumeSubheading
+      {Planning and Control for Unmanned Aerial Vehicles}{}
+      {Advised by Dr. Patricio Vela}{Jan 2022 \textbf{--} Aug 2022}
+        \resumeItemListStart
+          \resumeItem{Developed kinodynamic trajectory planner in MATLAB using nonlinear optimization to generate composite bezier spline paths satisfying dynamic constraints for fixed-wing Unmanned Aerial Vehicles (UAVs).}
+          \resumeItem{Combined model predictive and reinforcement learning-based elements in heirarchial aircraft controller to improve generalization to various aircraft types}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
 % %----------- Publications -----------
 \section{Publications}
@@ -192,63 +262,6 @@ style=ieee,
   \nocite{*}
   \printbibliography[heading=none]
 
-%----------- WORK EXPERIENCE -----------
-
-\section{Experience}
-  \vspace{3pt}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Dynamic Mobility Lab}{Atlanta, GA}
-      {Graduate Researcher}{Aug 2024 \textbf{--} Present}
-      \resumeItemListStart
-        \resumeItem{Developed bipedal robot control system utilizing offline trajectory optimization and reinforcement learning to generate stepping behaviors that are 
-        natural-looking, easily tunable, and train faster than comparable approaches (Submitted to ICRA 2026; in review)}
-        \resumeItem{Researching integration of reachability analysis tools into trajectory optimization pipeline to produce controllers for bipedal robots which are 
-        provably robust to terrain variation and external disturbances}
-      \resumeItemListEnd
-    \resumeSubheading
-      {Johns Hopkins University Applied Physics Laboratory}{Laurel, MD}
-      {Robotics Engineer}{Jun 2022 \textbf{--} Jul 2024}
-        \resumeItemListStart
-      \resumeItem{Led statistical verification and operational analysis, and assisted in development of Nonlinear Model Predictive Control (NMPC) algorithm for
-      multi-agent fixed-wing Unmanned Aerial Vehicle (UAV) systems}
-      \resumeItem{Provided hardware and software support for numerous outdoor flight tests of NMPC-based UAV landing controller}
-      \resumeItem{Implemented trajectory optimization to realize manipulation behaviors such grasping and valve turning on
-      unmanned underwater mobile manipulator (awarded top prize in internal R\&D across all of the company)}
-      \resumeItem{Co-led short-term research on robot co-design, which leveraged bayesian optimization to automatically choose 
-      task-optimal hardware and control parameters for hexapod robot system}
-      % \resumeItem{Implemented scripted task behaviors and "glue logic" for demonstrations
-      % of underwater manipulator robot}
-      % \resumeItem{Designed 2-axis sensor positioning mechanism for littoral zone
-      % exploration robot}
-      % \resumeItem{Developed power and control electronics for thermal cautery heater used in
-      % experimental emergency medical device}
-      \resumeItem{Mentored high school interns on mechanical and software design
-      of robotic manipulator}
-    \resumeItemListEnd
-    
-    \resumeSubheading
-      {Intelligent Vision and Automation Lab}{Atlanta, GA}
-      {Graduate Researcher}{Jan 2022 \textbf{--} Aug 2022}
-        \resumeItemListStart
-          \resumeItem{Combined model predictive and reinforcement learning-based elements in heirarchial aircraft controller to improve generalization to various aircraft types}
-          \resumeItem{Developed trajectory library in MATLAB utilizing convex optimization to generate composite bezier spline paths}
-    \resumeItemListEnd
-    \resumeSubheading
-      {Lawrence Livermore National Laboratory}{Livermore, CA}
-      {Defense Technologies Engineering Intern}{May 2020 \textbf{--} Aug 2020,
-      Sep 2021 \textbf{--} Apr 2022}
-        \resumeItemListStart
-      \resumeItem{Designed simulator and hardware-in-the-loop testing
-      for Unmanned Surface Vehicle (USV) control system}
-      \resumeItem{Developed actuator and hydrodynamic drag models fit from experimental
-      data, used to inform new USV design}
-      \resumeItem{Led development of data collection system integrating cameras,
-      hydrophones, and FPGA on custom PCB}
-        \resumeItemListEnd
-    
-  \resumeSubHeadingListEnd
 
 % %----------- SKILLS -----------
 
@@ -269,6 +282,16 @@ style=ieee,
         % \textbf{Applications}{: X, X, X}
     }}
   \resumeSubHeadingListEnd
+
+\section{Teaching}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{ECE 4550 (Control System Design):}{ Supervised lab assignments and gave supplemental lectures for undergraduate course covering linear control and observer design, motor and power converter control, and embedded systems programming} \\ \vspace{3pt}
+        \textbf{ECE 6552 (Nonlinear Systems):}{ Teaching Assistant for graduate course covering fundamentals of nonlinear control including Lyapunov theory, feedback linearization, control barrier functions} \\ \vspace{3pt}
+    }}
+  \resumeSubHeadingListEnd
+
 
 %----------- RESEARCH EXPERIENCE -----------
 
