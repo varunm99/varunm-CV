@@ -1,0 +1,389 @@
+%-------------------------
+% Resume in Latex
+% Author : Varun Madabushi
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+\addbibresource{citations.bibtex} %Imports bibliography file\
+
+% Bold "Varun Madabushi" in bibliography
+\usepackage{xpatch}
+\newbibmacro*{name:bold}[2]{%
+  \def\do##1{\iffieldequalstr{hash}{##1}{\bfseries\listbreak}{}}%
+  \dolistloop{\boldnames}%
+}
+\newcommand*{\boldnames}{}
+\xpretocmd{\mkbibnamefamily}{\begingroup\usebibmacro{name:bold}{#1}{}}{}{}
+\xapptocmd{\mkbibnamefamily}{\endgroup}{}{}
+\xpretocmd{\mkbibnamegiven}{\begingroup\usebibmacro{name:bold}{#1}{}}{}{}
+\xapptocmd{\mkbibnamegiven}{\endgroup}{}{}
+\xpretocmd{\mkbibnameprefix}{\begingroup\usebibmacro{name:bold}{#1}{}}{}{}
+\xapptocmd{\mkbibnameprefix}{\endgroup}{}{}
+\xpretocmd{\mkbibnamesuffix}{\begingroup\usebibmacro{name:bold}{#1}{}}{}{}
+\xapptocmd{\mkbibnamesuffix}{\endgroup}{}{}
+
+\forcsvlist{\listadd\boldnames}
+  {16c6d047731af050a67145246b055cbf}
+
+\renewcommand*{\mkbibcompletename}[1]{%
+  #1%
+  \ifitemannotation{equal}
+    {\textsuperscript{*}}
+    {}%
+}
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeEducationHeading}[8]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#5} & \textit{\small #6} \\
+      \textit{\small#7} & \textit{\small #8} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{center}
+    \textbf{\Huge \scshape Varun Madabushi } \\ \vspace{3pt}
+    \small
+    \faMobile \hspace{.5pt} \href{tel:+18139651255}{(813) 965 1255}
+    % Varun Madabushi
+    $|$
+    \faAt \hspace{.5pt}
+    \href{mailto:vmadabushi3@gatech.edu}{vmadabushi3@gatech.edu}
+    $|$
+    \faMapMarker \hspace{.5pt} {Atlanta, GA, USA}
+\end{center}
+
+
+
+%----------- EDUCATION -----------
+\section{Overview}
+  3rd-year PhD student seeking an internship for Spring or Summer 2027. Researching robot locomotion, reinforcement learning, and control theory, with a wide breadth of skills spanning hardware and software domains.
+  Interested in positions involving simulation, trajectory optimization, or sample-efficient learning.
+
+\section{Education}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    
+    \resumeEducationHeading
+      {Georgia Institute of Technology}{Atlanta, GA}
+      {PhD. in Robotics (Advised by Dr. Maegan Tucker)       }{Aug 2024 \textbf{--} Dec 2028 (Expected)}
+      {M.S. in Electrical and Computer Engineering (GPA: 3.92/4.00)        }{Jan 2021 \textbf{--} May 2022}
+      {B.S. in Electrical Engineering, Minor in Robotics (GPA: 3.93/4.00)   }{Aug 2017 \textbf{--} Dec 2020}
+  \resumeSubHeadingListEnd
+
+%----------- WORK EXPERIENCE -----------
+
+\section{Research Experience}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Robot Learning for Locomotion}{}
+      {Advised by Dr. Maegan Tucker}{Aug 2024 \textbf{--} Present}
+      \resumeItemListStart
+        \resumeItem{Investigating hypernetworks to efficiently represent families of specialized policies in multi-objective and multi-domain reinforcement learning, with the goal of improving training efficiency and policy robustness.}
+        \resumeItem{Researching multi-objective reinforcement learning, applied to co-design morphology and controller parameters across a class of robots and locomotion tasks \cite{madabushi2026mocha}. Presented preliminary results at IROS 2026.}
+        \resumeItem{Developed NaviGait \cite{janwani2026navigait}, a bipedal robot controller utilizing offline trajectory optimization and reinforcement learning to generate stepping behaviors that are 
+        natural-looking, easily tunable, and train faster than comparable approaches (presented at ICRA 2026).}
+        \resumeItem{Assisted creation of motion regtargeting algorithm, using trajectory optimization to map motion capture and ground reaction force data into
+         dynamically feasible and human-like reference trajectories; tested on LAFAN1 dataset \cite{zhang2026kinodynamic}.}
+        \resumeItem{Software developer for lab's MuJoCo and JAX-based multi-objective reinforcement learning software stack.}
+      \resumeItemListEnd 
+    \resumeSubheading
+      {Reachability Analysis of Hybrid Systems}{}
+      {Advised by Dr. Maegan Tucker, Dr. Samuel Coogan}{Aug 2024 \textbf{--} Present}
+      \resumeItemListStart
+        \resumeItem{Studying safety verification and robust control of hybrid systems using fast computation of forward-reachable sets, with applications to robust legged locomotion under rough terrain or external disturbances.}
+        \resumeItem{Developed a criteria for verifying forward invariance of a hybrid system's forward reachable set, and applied this to design a maximally robust controller for a bipedal walker model \cite{madabushi2026differentiableinvariant} (Accepted to CDC 2026).}
+        \resumeItem{Created algorithm for probabilistic invariant set computation through sampling-based optimization and PAC learning for correctness guarantees \cite{madabushi2026finitestep}.}
+      \resumeItemListEnd 
+    \resumeSubheading
+      {Planning and Control for Unmanned Aerial Vehicles}{}
+      {Advised by Dr. Patricio Vela}{Jan 2022 \textbf{--} Aug 2022}
+      \resumeItemListStart
+        \resumeItem{Developed kinodynamic trajectory planner in MATLAB using nonlinear optimization to generate composite bezier spline paths satisfying dynamic constraints for fixed-wing Unmanned Aerial Vehicles (UAVs).}
+        \resumeItem{Combined model predictive and reinforcement learning-based elements in heirarchial aircraft controller to improve generalization to various aircraft types.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\section{Employment}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Johns Hopkins University Applied Physics Laboratory}{Laurel, MD}
+      {Robotics Engineer}{Jun 2022 \textbf{--} Jul 2024}
+        \resumeItemListStart
+      \resumeItem{Led statistical verification and operational analysis, and assisted in development of Nonlinear Model Predictive Control (NMPC) algorithm for
+      multi-agent fixed-wing UAV systems \cite{madabushi2025Swarming} (presented at ICRA 2025).}
+      \resumeItem{Provided hardware and software support for outdoor flight tests of NMPC-based UAV landing controller.}
+      \resumeItem{Implemented trajectory optimization to realize manipulation behaviors such grasping and valve turning on
+      unmanned underwater mobile manipulator (awarded top prize in internal R\&D across all of the company).}
+      \resumeItem{Co-led research on robot co-design, which leveraged Bayesian optimization to automatically choose 
+      task-optimal morphology and control parameters for hexapod robot.}
+      \resumeItem{Designed sand- and water-proof 3-axis sensor positioning mechanism for littoral zone exploration robot.}
+      \resumeItem{Developed power and control electronics for cautery heater used in experimental emergency medical device.}
+      \resumeItem{Mentored high school interns on mechanical and software design of robotic manipulator.}
+    \resumeItemListEnd
+    \resumeSubheading
+      {Lawrence Livermore National Laboratory}{Livermore, CA}
+      {Defense Technologies Engineering Intern}{May 2020 \textbf{--} Aug 2020,
+      Sep 2021 \textbf{--} Apr 2022}
+      \resumeItemListStart
+        \resumeItem{Designed simulator and hardware-in-the-loop testing
+        for Unmanned Surface Vehicle (USV) control system.}
+        \resumeItem{Developed actuator and hydrodynamic drag models fit from experimental
+        data, used to inform new USV design.}
+        \resumeItem{Led development of data collection system integrating cameras,
+        hydrophones, and FPGA on custom PCB.}
+      \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+
+% %----------- Publications -----------
+\section{Publications}
+  \vspace{3pt}
+  \nocite{*}
+  \printbibliography[heading=none]
+  \par\smallskip
+  {\footnotesize {*} Denotes equal contribution, names ordered alphabetically.\par}
+
+% %----------- SKILLS -----------
+
+\section{Skills}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{Concepts: }{Nonlinear Systems, Optimal Control, System Identification, Reinforcement Learning, Parallel Programming} \\ \vspace{3pt}
+        \textbf{Programming: }{C++, Python, JAX, PyTorch, CUDA, MPI, MATLAB} \\ \vspace{3pt}
+        \textbf{Coding Tools: }{GitHub Copilot, Codex} \\ \vspace{3pt}
+        
+        \textbf{Software: }{MuJoCo, ROS, Docker, STM32, Arduino, Git, Fusion360, Solidworks, OnShape, Altium, KiCAD} \\ \vspace{3pt}
+        
+        \textbf{Tools: }{Soldering (SMD and THT), Mill, Lathe, 3D Printer, Oscilloscope, Logic Analyzer}
+        
+        % \textbf{Frameworks}{: X, X, X} \\
+        % \textbf{Developer Tools}{: X, X, X} \\
+        % \textbf{Libraries}{: X, X, X} \\
+        % \textbf{Applications}{: X, X, X}
+    }}
+  \resumeSubHeadingListEnd
+
+\section{Teaching and Service Activities}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{TA, ECE 4550 (Control System Design): }{Supervised lab assignments and gave lectures for undergraduate course covering linear controller and observer design, motors and power converters, and embedded systems.} \\ \vspace{3pt}
+        \textbf{TA, ECE 6552 (Nonlinear Systems): }{Hosted office hours and review sessions for graduate course covering fundamentals of nonlinear control including Lyapunov theory, feedback linearization, and control barrier functions.} \\ \vspace{3pt}
+        \textbf{Graduate Mentor, Vertically Integrated Projects: }{Mentored multidisciplinary team of 12 undergraduates developing a bipedal robot, including actuator selection, structural design, and controller synthesis.} \\ \vspace{3pt}
+        \textbf{President, RoboGrads: }{President of RoboGrads, a student organization supporting the robotics community by organizing social events, research talks, qualifying exam prep sessions, and incoming student orientation.}
+    }}
+  \resumeSubHeadingListEnd
+
+
+%----------- RESEARCH EXPERIENCE -----------
+
+% \section{Research Experience}
+%   \vspace{3pt}
+%   \resumeSubHeadingListStart
+  
+%     \resumeSubheading
+%       {Intelligent Vision and Automation Lab}{Georgia Tech}
+%       {Graduate Researcher}{Jan 2022 \textbf{--} Aug 2022}
+%         \resumeItemListStart
+%           \resumeItem{Combined model predictive and reinforcement learning-based aircraft controllers to improve generalization to various aircraft types}
+%         \resumeItem{Developed trajectory library in MATLAB utilizing convex
+%           optimization to generate composite bezier spline paths}
+%         \resumeItemListEnd
+    
+%     % \vspace{14pt}
+    
+%     \resumeSubheading
+%       {Dynamic Adaptive Robot Technologies Lab}{Georgia Tech}
+%       {Undergraduate Researcher}{Aug 2019 \textbf{--} Dec 2020}
+%         \resumeItemListStart
+%             \resumeItem{Designed components of hexapod robot with swappable locomotion mechanism for efficient multi-terrain traversal}
+%             \resumeItem{Developed DC motor control PCB, communication interface, and feedback control software for leg actuator and control system}
+%       \resumeItem{Published "Increasing Mobile Robot Efficiency and Versatility
+%       Through Manipulation-Driven Adaptation" in ASME Journal of Mechanisms and
+%       Robotics (Oct 2021)}
+%         \resumeItemListEnd
+
+%     \resumeSubheading
+%       {Electrical Engineering Capstone}{Georgia Tech}
+%       {Undergraduate Capstone Project}{Aug 2020 \textbf{--} Dec 2020}
+%         \resumeItemListStart
+%         \resumeItem{Designed tactile sensor module to measure pressures across 16 points on a 40mm x 40mm area }
+%         \resumeItem{Created models of piezoresistive effect in velostat material
+%         to improve accuracy of sensor measurements}
+%         \resumeItem{Developed C++ and PyQT code to read data and manage sensors
+%         with user interface}
+%         \resumeItemListEnd
+%   \resumeSubHeadingListEnd
+
+
+
+% \section{Personal Projects}
+%   \vspace{3pt}
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {Combat Robots/"BattleBots"}{June 2021 \textbf{--} Present}
+%       {}{}
+%         \resumeItemListStart
+%           \resumeItem{Designed and built 12lb and 3lb combat robots using horizontal spinning
+%           weapons and novel control algorithm}
+%     \resumeItem{Designed and tested custom printed circuit boards to house
+%     sensors, communications, power management, and microcontroller in small package}
+%     \resumeItem{Participated in multiple competitions and analyzed battle damage
+%     for potential improvements}
+%         \resumeItemListEnd
+%   \resumeSubHeadingListEnd
+    
+
+% %----------- TEACHING -----------
+% \section{Teaching}
+%   \vspace{3pt}
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {RoboJackets Electrical Training}{Georgia Tech}
+%       {Electrial Training Lead}{Aug 2018 \textbf{--} Dec 2020}
+%         \resumeItemListStart
+%     \resumeItem{Wrote and delivered a 7 week training course teaching 60 incoming robotics
+%     students about PCB design using EAGLE software}
+%     \resumeItem{Implemented hands-on activities to introduce breadboarding and
+%     electronics concepts}
+%     \resumeItem{Created video tutorial series on EAGLE software for
+%     virtual/asynchronous learning}
+%         \resumeItemListEnd
+
+%     \resumeSubheading
+%       {The Hive - ECE Makerspace}{Georgia Tech}
+%       {Peer Instructor}{May 2021 \textbf{--} Dec 2021}
+%         \resumeItemListStart
+%       \resumeItem{Gave advice and debugging assistance to students completing
+%       school and personal projects}
+%       \resumeItem{Led workshops to teach 30 students soldering, programming, and
+%       3D printing to build their own keyboards}
+%       \resumeItem{Performed inventory management and equiment maintenance for
+%       electronics and 3D printing lab}
+%         \resumeItemListEnd
+%   \resumeSubHeadingListEnd
+\end{document}
